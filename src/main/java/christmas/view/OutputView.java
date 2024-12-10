@@ -1,6 +1,7 @@
 package christmas.view;
 
 import christmas.model.Orders;
+import java.util.Map;
 
 public class OutputView {
 
@@ -53,15 +54,10 @@ public class OutputView {
         System.out.println(giftEvent + " 1개");
     }
 
-    public void printBenefitResult(int christmasDiscount, int weekdayDiscount, int weekendDiscount, int specialDiscount,
-                                   int giftDiscount) {
-
-        String benefitResult = OutputFormatter.formatBenefitResult(christmasDiscount, weekdayDiscount, weekendDiscount,
-                specialDiscount,
-                giftDiscount);
-
+    public void printBenefitResult(Map<String, Integer> benefitResult) {
         System.out.println(NEXT_LINE + "<혜택 내역>");
-        System.out.println(benefitResult);
+        String formatBenefitResult = OutputFormatter.formatBenefitResult(benefitResult);
+        System.out.println(formatBenefitResult);
     }
 
     public void printTotalBenefitPrice(int totalBenefitPrice) {

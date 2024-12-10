@@ -2,6 +2,8 @@ package christmas.view;
 
 import christmas.model.Order;
 import christmas.model.Orders;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.StringJoiner;
 
 public class OutputFormatter {
@@ -19,30 +21,15 @@ public class OutputFormatter {
         return sj.toString();
     }
 
-    public static String formatBenefitResult(int christmasDiscount, int weekdayDiscount, int weekendDiscount,
-                                             int specialDiscount, int giftDiscount) {
+    public static String formatBenefitResult(Map<String, Integer> benefitResult) {
         StringJoiner sj = new StringJoiner(NEXT_LINE);
-        if (christmasDiscount != 0) {
-            String format = String.format("크리스마스 디데이 할인: -%,d원", christmasDiscount);
-            sj.add(format);
-        }
-        if (weekdayDiscount != 0) {
-            String format = String.format("평일 할인: -%,d원", weekdayDiscount);
-            sj.add(format);
-        }
-        if (weekendDiscount != 0) {
-            String format = String.format("주말 할인: -%,d원", weekendDiscount);
-            sj.add(format);
-        }
-        if (specialDiscount != 0) {
-            String format = String.format("특별 할인: -%,d원", specialDiscount);
-            sj.add(format);
-        }
-        if (giftDiscount != 0) {
-            String format = String.format("증정 이벤트: -%,d원", giftDiscount);
-            sj.add(format);
-        }
 
+        for (Entry<String, Integer> stringIntegerEntry : benefitResult.entrySet()) {
+            if (stringIntegerEntry.getValue() != 0) {
+                String format = String.format("%s: -%,d원", stringIntegerEntry.getKey(), stringIntegerEntry.getValue());
+                sj.add(format);
+            }
+        }
         return sj.toString();
     }
 
