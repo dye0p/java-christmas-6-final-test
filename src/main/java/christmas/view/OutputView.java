@@ -70,4 +70,10 @@ public class OutputView {
         System.out.println(formatTotalBenefitPrice);
 
     }
+
+    public void printAfterDiscountPrice(int afterDiscountPrice) {
+        System.out.println(NEXT_LINE + "<할인 후 예상 결제 금액>");
+        String formatAfterDiscountPrice = String.format("%,d원", afterDiscountPrice);
+        System.out.println(formatAfterDiscountPrice);
+    }
 }
