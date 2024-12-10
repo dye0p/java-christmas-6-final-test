@@ -29,6 +29,8 @@ public class EventController {
         //주문
         Orders orders = tryReadOrder();
 
+        //주문혜택 미리보기 안내
+        outputView.printEventPreviewMessage(date.getDate());
     }
 
     private Date tryReadDate() {

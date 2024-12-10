@@ -22,4 +22,7 @@ public class Date {
         }
     }
 
+    public int getDate() {
+        return date;
+    }
 }
