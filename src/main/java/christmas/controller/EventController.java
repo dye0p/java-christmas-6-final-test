@@ -31,6 +31,9 @@ public class EventController {
 
         //주문혜택 미리보기 안내
         outputView.printEventPreviewMessage(date.getDate());
+
+        //주문 메뉴 출력
+        outputView.printOrderMenus(orders);
     }
 
     private Date tryReadDate() {

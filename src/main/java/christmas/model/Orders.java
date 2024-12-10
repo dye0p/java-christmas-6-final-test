@@ -1,6 +1,7 @@
 package christmas.model;
 
 import christmas.exception.ErrorMessage;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
@@ -64,5 +65,9 @@ public class Orders {
         if (nonDuplicateOrderSet.size() != orders.size()) {
             throw new IllegalArgumentException(ErrorMessage.INVALID_ORDER.getErrorMessage());
         }
+    }
+
+    public List<Order> getOrders() {
+        return new ArrayList<>(orders);
     }
 }
