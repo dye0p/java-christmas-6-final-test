@@ -21,6 +21,22 @@ public class Order {
         }
     }
 
+    public int calculateDessertQuantity() {
+        int count = 0;
+        if (Menu.isDessert(this.menu)) {
+            count += this.quantity;
+        }
+        return count;
+    }
+
+    public int calculateMainQuantity() {
+        int count = 0;
+        if (Menu.isMain(this.menu)) {
+            count += this.quantity;
+        }
+        return count;
+    }
+
     public Menu getMenu() {
         return menu;
     }
@@ -44,21 +60,5 @@ public class Order {
     @Override
     public int hashCode() {
         return Objects.hashCode(menu);
-    }
-
-    public int calculateDessertQuantity() {
-        int count = 0;
-        if (Menu.isDessert(this.menu)) {
-            count += this.quantity;
-        }
-        return count;
-    }
-
-    public int calculateMainQuantity() {
-        int count = 0;
-        if (Menu.isMain(this.menu)) {
-            count += this.quantity;
-        }
-        return count;
     }
 }
