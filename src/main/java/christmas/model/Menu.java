@@ -47,6 +47,10 @@ public enum Menu {
         return true;
     }
 
+    public static boolean isDessert(Menu menu) {
+        return menu.getType().equals(MenuType.DESSERT);
+    }
+
     public MenuType getType() {
         return type;
     }

@@ -106,4 +106,17 @@ public class Orders {
         }
         return discount;
     }
+
+    public int canWeekdayEvent(Date date) {
+        int discount = 0;
+        if (date.isWeekday()) {
+            //평일 할인(일요일~목요일): 평일에는 디저트 메뉴를 메뉴 1개당 2,023원 할인
+            int dessertQuantity = 0;
+            for (Order order : orders) {
+                dessertQuantity += order.calculateDessertQuantity();
+            }
+            discount = dessertQuantity * 2023;
+        }
+        return discount;
+    }
 }

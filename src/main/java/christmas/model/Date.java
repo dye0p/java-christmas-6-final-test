@@ -1,6 +1,7 @@
 package christmas.model;
 
 import christmas.exception.ErrorMessage;
+import java.time.LocalDate;
 
 public class Date {
 
@@ -22,11 +23,18 @@ public class Date {
         }
     }
 
-    public int getDate() {
-        return date;
-    }
-
     public boolean canChristmasEvent() {
         return date > 1 && date < 25;
+    }
+
+    public boolean isWeekday() {
+        LocalDate localDate = LocalDate.of(2023, 12, this.date);
+        int dayOfWeekValue = localDate.getDayOfWeek().getValue();
+
+        return (dayOfWeekValue != 5 && dayOfWeekValue != 6);
+    }
+
+    public int getDate() {
+        return date;
     }
 }

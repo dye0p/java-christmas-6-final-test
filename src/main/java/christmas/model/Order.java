@@ -45,4 +45,12 @@ public class Order {
     public int hashCode() {
         return Objects.hashCode(menu);
     }
+
+    public int calculateDessertQuantity() {
+        int count = 0;
+        if (Menu.isDessert(this.menu)) {
+            count += this.quantity;
+        }
+        return count;
+    }
 }
