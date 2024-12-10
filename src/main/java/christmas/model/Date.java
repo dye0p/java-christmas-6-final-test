@@ -24,7 +24,7 @@ public class Date {
     }
 
     public boolean canChristmasEvent() {
-        return date > 1 && date < 25;
+        return date >= 1 && date <= 25;
     }
 
     public boolean isWeekday() {
