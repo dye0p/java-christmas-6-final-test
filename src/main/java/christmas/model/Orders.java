@@ -85,4 +85,13 @@ public class Orders {
 
         return totalPrice >= 10000;
     }
+
+    public String canGiftEvent() {
+        String gift = "없음";
+        int totalPrice = calculateBeforeDiscountTotalPrice();
+        if (totalPrice >= 120000) {
+            gift = Menu.CHAMPAGNE.getName();
+        }
+        return gift;
+    }
 }

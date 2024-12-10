@@ -45,6 +45,10 @@ public class EventController {
             outputView.printNonEventResult(beforeTotalPrice);
             return;
         }
+
+        //이벤트 참여 가능
+        //증정 메뉴 (총 주문 금액이 12만원 이상인 경우)
+        String giftEvent = orders.canGiftEvent();
     }
 
     private Date tryReadDate() {
