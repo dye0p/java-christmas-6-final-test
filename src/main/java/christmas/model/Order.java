@@ -53,4 +53,12 @@ public class Order {
         }
         return count;
     }
+
+    public int calculateMainQuantity() {
+        int count = 0;
+        if (Menu.isMain(this.menu)) {
+            count += this.quantity;
+        }
+        return count;
+    }
 }

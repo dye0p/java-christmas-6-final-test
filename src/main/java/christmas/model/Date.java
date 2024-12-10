@@ -34,6 +34,10 @@ public class Date {
         return (dayOfWeekValue != 5 && dayOfWeekValue != 6);
     }
 
+    public boolean isWeekend() {
+        return !isWeekday();
+    }
+
     public int getDate() {
         return date;
     }
