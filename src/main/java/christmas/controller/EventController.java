@@ -41,8 +41,7 @@ public class EventController {
         outputView.printBeforeDiscountTotalPrice(beforeTotalPrice);
 
         //이벤트에 참여할 수 없을 때
-
-        if (orders.isPossibleEvent()) {
+        if (!orders.isPossibleEvent()) {
             outputView.printNonEventResult(beforeTotalPrice);
             return;
         }
