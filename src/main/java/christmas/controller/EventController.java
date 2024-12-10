@@ -65,6 +65,13 @@ public class EventController {
 
         //증정 이벤트
         int giftDiscount = orders.canGiftEvent();
+
+        //총혜택 금액 = 할인 금액의 합계 + 증정 메뉴의 가격
+        //할인 금액
+        int totalDiscount = christmasDiscount + weekdayDiscount + weekendDiscount + specialDiscount;
+        int totalBenefitPrice = totalDiscount + giftDiscount;
+
+
     }
 
     private Date tryReadDate() {
