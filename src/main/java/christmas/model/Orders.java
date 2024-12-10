@@ -86,7 +86,7 @@ public class Orders {
         return totalPrice >= 10000;
     }
 
-    public String canGiftEvent() {
+    public String canGiftMenu() {
         String gift = "없음";
         int totalPrice = calculateBeforeDiscountTotalPrice();
         if (totalPrice >= 120000) {
@@ -140,5 +140,16 @@ public class Orders {
             discount = 1000;
         }
         return discount;
+    }
+
+    public int canGiftEvent() {
+        long discount = 0;
+
+        String giftMenu = canGiftMenu();
+        if (!giftMenu.equals("없음")) {
+            discount = Menu.getGiftMenu();
+        }
+
+        return (int) discount;
     }
 }

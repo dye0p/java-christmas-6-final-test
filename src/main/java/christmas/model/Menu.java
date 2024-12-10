@@ -55,6 +55,10 @@ public enum Menu {
         return menu.getType().equals(MenuType.MAIN);
     }
 
+    public static Long getGiftMenu() {
+        return Menu.CHAMPAGNE.price;
+    }
+
     public MenuType getType() {
         return type;
     }

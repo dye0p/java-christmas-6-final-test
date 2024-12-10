@@ -48,7 +48,7 @@ public class EventController {
 
         //이벤트 참여 가능
         //증정 메뉴 (총 주문 금액이 12만원 이상인 경우)
-        String giftEvent = orders.canGiftEvent();
+        String giftEvent = orders.canGiftMenu();
 
         //혜택 내역
         //크리스마스 디데이 할인
@@ -62,6 +62,9 @@ public class EventController {
 
         //특별 할인
         int specialDiscount = orders.canSpecialEvent(date);
+
+        //증정 이벤트
+        int giftDiscount = orders.canGiftEvent();
     }
 
     private Date tryReadDate() {
