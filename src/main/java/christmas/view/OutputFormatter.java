@@ -45,4 +45,12 @@ public class OutputFormatter {
 
         return sj.toString();
     }
+
+    public static String formatTotalBenefitPrice(int totalBenefitPrice) {
+        String totalBenefitResult = "0원";
+        if (totalBenefitPrice != 0) {
+            totalBenefitResult = String.format("-%,d원", totalBenefitPrice);
+        }
+        return totalBenefitResult;
+    }
 }

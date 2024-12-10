@@ -73,6 +73,8 @@ public class EventController {
         int totalDiscount = christmasDiscount + weekdayDiscount + weekendDiscount + specialDiscount;
         int totalBenefitPrice = totalDiscount + giftDiscount;
 
+        outputView.printTotalBenefitPrice(totalBenefitPrice);
+
         //할인 후 예상 결제 금액 = 할인 전 총주문 금액 - 할인 금액
         int afterDiscountPrice = beforeTotalPrice - totalDiscount;
 

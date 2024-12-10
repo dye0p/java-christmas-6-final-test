@@ -63,4 +63,11 @@ public class OutputView {
         System.out.println(NEXT_LINE + "<혜택 내역>");
         System.out.println(benefitResult);
     }
+
+    public void printTotalBenefitPrice(int totalBenefitPrice) {
+        System.out.println(NEXT_LINE + "<총혜택 금액>");
+        String formatTotalBenefitPrice = OutputFormatter.formatTotalBenefitPrice(totalBenefitPrice);
+        System.out.println(formatTotalBenefitPrice);
+
+    }
 }
