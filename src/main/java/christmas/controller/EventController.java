@@ -34,6 +34,11 @@ public class EventController {
 
         //주문 메뉴 출력
         outputView.printOrderMenus(orders);
+
+        //할인 전 총 주문 금액 출력
+        //할인 전 총 주문 금액 계산
+        int beforeTotalPrice = orders.calculateBeforeDiscountTotalPrice();
+        outputView.printBeforeDiscountTotalPrice(beforeTotalPrice);
     }
 
     private Date tryReadDate() {

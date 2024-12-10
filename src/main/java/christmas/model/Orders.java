@@ -70,4 +70,12 @@ public class Orders {
     public List<Order> getOrders() {
         return new ArrayList<>(orders);
     }
+
+    public int calculateBeforeDiscountTotalPrice() {
+        int totalPrice = 0;
+        for (Order order : orders) {
+            totalPrice += order.getMenu().getPrice();
+        }
+        return totalPrice;
+    }
 }
