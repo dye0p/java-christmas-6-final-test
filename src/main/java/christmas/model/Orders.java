@@ -132,4 +132,13 @@ public class Orders {
         }
         return discount;
     }
+
+    public int canSpecialEvent(Date date) {
+        int discount = 0;
+        if (date.isSpecialDay()) {
+            //특별 할인: 이벤트 달력에 별이 있으면 총주문 금액에서 1,000원 할인
+            discount = 1000;
+        }
+        return discount;
+    }
 }

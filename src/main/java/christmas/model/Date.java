@@ -38,6 +38,14 @@ public class Date {
         return !isWeekday();
     }
 
+    public boolean isSpecialDay() {
+        LocalDate localDate = LocalDate.of(2023, 12, this.date);
+        int dayOfMonthValue = localDate.getDayOfMonth();
+
+        return dayOfMonthValue == 3 || dayOfMonthValue == 10 || dayOfMonthValue == 17 || dayOfMonthValue == 24 ||
+                dayOfMonthValue == 25 || dayOfMonthValue == 31;
+    }
+
     public int getDate() {
         return date;
     }

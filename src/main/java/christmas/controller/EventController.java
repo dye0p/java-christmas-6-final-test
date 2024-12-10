@@ -59,6 +59,9 @@ public class EventController {
 
         //주말 할인
         int weekendEvent = orders.canWeekendEvent(date);
+
+        //특별 할인
+        int specialEvent = orders.canSpecialEvent(date);
     }
 
     private Date tryReadDate() {
