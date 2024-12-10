@@ -29,4 +29,22 @@ public class OutputView {
         String format = String.format("%,d원", beforeTotalPrice);
         System.out.println(format);
     }
+
+    public void printNonEventResult(int beforeTotalPrice) {
+        System.out.println(NEXT_LINE + "<증정 메뉴>");
+        System.out.println("없음");
+
+        System.out.println(NEXT_LINE + "<혜택 내역>");
+        System.out.println("없음");
+
+        System.out.println(NEXT_LINE + "<총혜택 금액>");
+        System.out.println("0원");
+
+        System.out.println(NEXT_LINE + "<할인 후 예상 결제 금액>");
+        String format = String.format("%,d원", beforeTotalPrice);
+        System.out.println(format);
+
+        System.out.println(NEXT_LINE + "<12월 이벤트 배지>");
+        System.out.println("없음");
+    }
 }

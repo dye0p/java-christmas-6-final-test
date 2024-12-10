@@ -39,6 +39,13 @@ public class EventController {
         //할인 전 총 주문 금액 계산
         int beforeTotalPrice = orders.calculateBeforeDiscountTotalPrice();
         outputView.printBeforeDiscountTotalPrice(beforeTotalPrice);
+
+        //이벤트에 참여할 수 없을 때
+
+        if (orders.isPossibleEvent()) {
+            outputView.printNonEventResult(beforeTotalPrice);
+            return;
+        }
     }
 
     private Date tryReadDate() {

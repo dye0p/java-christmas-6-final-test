@@ -79,4 +79,10 @@ public class Orders {
         }
         return totalPrice;
     }
+
+    public boolean isPossibleEvent() {
+        int totalPrice = calculateBeforeDiscountTotalPrice();
+
+        return totalPrice > 10000;
+    }
 }
