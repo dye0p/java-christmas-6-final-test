@@ -1,8 +1,10 @@
 package christmas.controller;
 
+import christmas.exception.ErrorMessage;
 import christmas.model.Date;
 import christmas.model.Menu;
 import christmas.model.Order;
+import christmas.model.Orders;
 import christmas.view.InputView;
 import christmas.view.OutputView;
 import java.util.ArrayList;
@@ -25,7 +27,7 @@ public class EventController {
         //식당 방문 날짜
         Date date = tryReadDate();
         //주문
-        List<Order> orders = tryReadOrder();
+        Orders orders = tryReadOrder();
 
     }
 
@@ -36,21 +38,29 @@ public class EventController {
         });
     }
 
-    private List<Order> tryReadOrder() {
+    private Orders tryReadOrder() {
         return requestRead(() -> {
             List<String[]> menuAndQuantities = inputView.readOrder();
 
             List<Order> orders = new ArrayList<>();
             for (String[] menuAndQuantity : menuAndQuantities) {
                 Menu menu = Menu.of(menuAndQuantity[0]);
-                int quantity = Integer.parseInt(menuAndQuantity[1]);
+                int quantity = parseQuantity(menuAndQuantity);
                 Order order = new Order(menu, quantity);
 
                 orders.add(order);
             }
 
-            return orders;
+            return Orders.from(orders);
         });
+    }
+
+    private int parseQuantity(String[] menuAndQuantity) {
+        try {
+            return Integer.parseInt(menuAndQuantity[1]);
+        } catch (NumberFormatException exception) {
+            throw new IllegalArgumentException(ErrorMessage.INVALID_ORDER.getErrorMessage());
+        }
     }
 
     private <T> T requestRead(Supplier<T> supplier) {

@@ -35,4 +35,27 @@ public enum Menu {
                 .findFirst()
                 .orElseThrow(() -> new IllegalArgumentException(ErrorMessage.INVALID_ORDER.getErrorMessage()));
     }
+
+    public static boolean isDrinkType(Order order) {
+        for (Menu value : values()) {
+            if (value.name.equals(order.getMenu().getName())) {
+                if (value.type.equals(MenuType.DRINK)) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    public MenuType getType() {
+        return type;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Long getPrice() {
+        return price;
+    }
 }
