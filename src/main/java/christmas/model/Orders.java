@@ -152,4 +152,20 @@ public class Orders {
 
         return (int) discount;
     }
+
+    public String getBadge(int totalBenefitPrice) {
+        String badge = "없음";
+
+        if (totalBenefitPrice >= 5000 && totalBenefitPrice < 10000) {
+            badge = "별";
+        }
+        if (totalBenefitPrice >= 10000 && totalBenefitPrice < 20000) {
+            badge = "트리";
+        }
+        if (totalBenefitPrice >= 20000) {
+            badge = "산타";
+        }
+
+        return badge;
+    }
 }
