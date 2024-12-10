@@ -25,4 +25,8 @@ public class Date {
     public int getDate() {
         return date;
     }
+
+    public boolean canChristmasEvent() {
+        return date > 1 && date < 25;
+    }
 }
