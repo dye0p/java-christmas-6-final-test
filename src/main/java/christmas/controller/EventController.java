@@ -52,16 +52,16 @@ public class EventController {
 
         //혜택 내역
         //크리스마스 디데이 할인
-        int christmasEvent = orders.canChristmasEvent(date);
+        int christmasDiscount = orders.canChristmasEvent(date);
 
         //평일 할인
-        int weekdayEvent = orders.canWeekdayEvent(date);
+        int weekdayDiscount = orders.canWeekdayEvent(date);
 
         //주말 할인
-        int weekendEvent = orders.canWeekendEvent(date);
+        int weekendDiscount = orders.canWeekendEvent(date);
 
         //특별 할인
-        int specialEvent = orders.canSpecialEvent(date);
+        int specialDiscount = orders.canSpecialEvent(date);
     }
 
     private Date tryReadDate() {
