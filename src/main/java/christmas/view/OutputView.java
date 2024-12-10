@@ -76,4 +76,9 @@ public class OutputView {
         String formatAfterDiscountPrice = String.format("%,d원", afterDiscountPrice);
         System.out.println(formatAfterDiscountPrice);
     }
+
+    public void printBadge(String badge) {
+        System.out.println(NEXT_LINE + "<12월 이벤트 배지>");
+        System.out.println(badge);
+    }
 }

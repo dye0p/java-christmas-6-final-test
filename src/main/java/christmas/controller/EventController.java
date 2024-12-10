@@ -78,6 +78,10 @@ public class EventController {
         //할인 후 예상 결제 금액 = 할인 전 총주문 금액 - 할인 금액
         int afterDiscountPrice = beforeTotalPrice - totalDiscount;
         outputView.printAfterDiscountPrice(afterDiscountPrice);
+
+        //12월 이벤트 배지
+        String badge = orders.getBadge(totalBenefitPrice);
+        outputView.printBadge(badge);
     }
 
     private Date tryReadDate() {
