@@ -74,7 +74,8 @@ public class Orders {
     public int calculateBeforeDiscountTotalPrice() {
         int totalPrice = 0;
         for (Order order : orders) {
-            totalPrice += order.getMenu().getPrice();
+            int quantity = order.getQuantity();
+            totalPrice += (int) (order.getMenu().getPrice() * quantity);
         }
         return totalPrice;
     }
