@@ -111,4 +111,8 @@ public class EventPlanner {
         int totalPrice = orders.calculateBeforeDiscountTotalPrice();
         return totalPrice >= 10000;
     }
+
+    public int getBeforeTotalPrice() {
+        return orders.calculateBeforeDiscountTotalPrice();
+    }
 }
