@@ -18,4 +18,31 @@ public class OutputFormatter {
         }
         return sj.toString();
     }
+
+    public static String formatBenefitResult(int christmasDiscount, int weekdayDiscount, int weekendDiscount,
+                                             int specialDiscount, int giftDiscount) {
+        StringJoiner sj = new StringJoiner(NEXT_LINE);
+        if (christmasDiscount != 0) {
+            String format = String.format("크리스마스 디데이 할인: -%,d원", christmasDiscount);
+            sj.add(format);
+        }
+        if (weekdayDiscount != 0) {
+            String format = String.format("평일 할인: -%,d원", weekdayDiscount);
+            sj.add(format);
+        }
+        if (weekendDiscount != 0) {
+            String format = String.format("주말 할인: -%,d원", weekendDiscount);
+            sj.add(format);
+        }
+        if (specialDiscount != 0) {
+            String format = String.format("특별 할인: -%,d원", specialDiscount);
+            sj.add(format);
+        }
+        if (giftDiscount != 0) {
+            String format = String.format("증정 이벤트: -%,d원", giftDiscount);
+            sj.add(format);
+        }
+
+        return sj.toString();
+    }
 }

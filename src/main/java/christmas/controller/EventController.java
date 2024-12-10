@@ -45,15 +45,14 @@ public class EventController {
             outputView.printNonEventResult(beforeTotalPrice);
             return;
         }
-
         //이벤트 참여 가능
         //증정 메뉴 (총 주문 금액이 12만원 이상인 경우)
         String giftEvent = orders.canGiftMenu();
+        outputView.printGiftMenu(giftEvent);
 
         //혜택 내역
         //크리스마스 디데이 할인
         int christmasDiscount = orders.canChristmasEvent(date);
-
         //평일 할인
         int weekdayDiscount = orders.canWeekdayEvent(date);
 
@@ -66,6 +65,9 @@ public class EventController {
         //증정 이벤트
         int giftDiscount = orders.canGiftEvent();
 
+        outputView.printBenefitResult(christmasDiscount, weekdayDiscount, weekendDiscount, specialDiscount,
+                giftDiscount);
+
         //총혜택 금액 = 할인 금액의 합계 + 증정 메뉴의 가격
         //할인 금액
         int totalDiscount = christmasDiscount + weekdayDiscount + weekendDiscount + specialDiscount;
@@ -77,7 +79,6 @@ public class EventController {
         //12월 이벤트 배지
         String badge = orders.getBadge(totalBenefitPrice);
 
-        System.out.println(badge);
 
     }
 

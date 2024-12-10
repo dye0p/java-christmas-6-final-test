@@ -47,4 +47,20 @@ public class OutputView {
         System.out.println(NEXT_LINE + "<12월 이벤트 배지>");
         System.out.println("없음");
     }
+
+    public void printGiftMenu(String giftEvent) {
+        System.out.println(NEXT_LINE + "<증정 메뉴>");
+        System.out.println(giftEvent + " 1개");
+    }
+
+    public void printBenefitResult(int christmasDiscount, int weekdayDiscount, int weekendDiscount, int specialDiscount,
+                                   int giftDiscount) {
+
+        String benefitResult = OutputFormatter.formatBenefitResult(christmasDiscount, weekdayDiscount, weekendDiscount,
+                specialDiscount,
+                giftDiscount);
+
+        System.out.println(NEXT_LINE + "<혜택 내역>");
+        System.out.println(benefitResult);
+    }
 }
